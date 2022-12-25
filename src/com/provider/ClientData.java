@@ -25,6 +25,22 @@ public class ClientData {
 	}
 	
 	
+//	public static Properties getAccNumberIndex(String filename) {
+//		AccountService asobj = null;
+//		FileInputStream fis = null;
+//		
+//		try {
+//			fis = new FileInputStream(filename);
+//			p=new Properties();
+//			p.load(fis);
+//		}
+//		catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		return p;
+//	}
+	
+	
 	public static AccountOperation getObject() {
 		AccountOperation accobj = null;
 		FileInputStream fis = null;

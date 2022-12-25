@@ -11,6 +11,8 @@ import com.databases.Account;
 import com.mysql.cj.protocol.Resultset;
 import com.provider.DBConnectionProvider;
 
+
+
 public class DaoImplement implements DatabaseOperations {
 	Connection con = DBConnectionProvider.getDbConnection();
 	PreparedStatement ps;
@@ -148,26 +150,23 @@ public class DaoImplement implements DatabaseOperations {
 		try {
 			ps =con.prepareStatement("SELECT * FROM ( SELECT accNo FROM accdetails ORDER BY accNo DESC LIMIT 1 )Var1 ORDER BY accNo ASC;");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			rs=ps.executeQuery();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			while(rs.next()) {
 				try {
 					num = rs.getInt(1);
+//					acc.setAccNoIndex(num);
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return num;
@@ -176,3 +175,4 @@ public class DaoImplement implements DatabaseOperations {
 	
 	
 }
+

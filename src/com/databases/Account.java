@@ -1,18 +1,28 @@
 package com.databases;
 
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.util.Properties;
+
+import com.dao.DatabaseOperations;
+import com.provider.ClientData;
+
+
+
 public class Account {
+	
 	//Abstraction
 		private int accNo;     //Encapsulation (private data)
 		private String accType;
 		private float accBalance;
 		private AccountDate OpDate;
-		public static int accNoIndex=1000;
-		
+
+
 
 	// Constructor
-		public Account(String accType,float accBalance) {
-			this.accNo = accNoIndex;
-			accNoIndex++;
+		public Account(int accNo,String accType,float accBalance) {
+
+			this.accNo = accNo;   //accNo AutoGeneration Algorithm Present At "com.services.AccountService"
 			this.accType= accType;
 			this.accBalance=accBalance;
 //			this.OpDate = OpDate;
@@ -32,15 +42,9 @@ public class Account {
 			this.accBalance = accBalance;
 		}
 		
-		public void setAccNoIndex(int accNoIndex) {
-			this.accNoIndex=accNoIndex;
-			System.out.println("Account Number Index Change Successfully.......");
-		}
+
 		
 	// Getter Method
-		public int getAccNoIndex() {
-			return this.accNoIndex;
-		}
 		
 		public int getAccNo() {
 			return this.accNo;
@@ -60,3 +64,4 @@ public class Account {
 		}
 		
 }
+
